@@ -4,7 +4,7 @@ from pyspark.sql import SparkSession
 
 #https://github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar
 spark = SparkSession.builder.appName("Python Spark SQL basic example").\
-    config('spark.driver.extraClassPath','https://github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar')\
+    config('spark.driver.extraClassPath','https://raw.github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar')\
     .config("spark.master","local[*]").getOrCreate()
 
 
