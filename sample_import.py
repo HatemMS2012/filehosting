@@ -8,7 +8,7 @@ spark = SparkSession.builder.appName("Python Spark SQL basic example").\
     .config("spark.master","local[*]").getOrCreate()
 
 
-db_url = "jdbc:mysql://127.0.0.1:3309/student?user=root&password=root"
+db_url = "jdbc:mysql://mysql.marathon.l4lb.thisdcos.directory:3306/student?user=root&password=root"
 db_driver = "com.mysql.jdbc.Driver"
 table_name = "student"
 
