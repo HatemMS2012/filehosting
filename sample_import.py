@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql import Row
 
 
-print("hello 5")
+print("hello 76")
 
 
 #https://github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar
@@ -24,17 +24,9 @@ def insert_dataframe_into_db(df,table_name,db_url,db_driver):
                   properties={"driver": db_driver})
 
 
-print("mysql config2 start ")
-sql = SQLContext(spark)
-df = sql.read.format('jdbc').options(
-   url='jdbc:mysql://100.66.1.15:5901/student',
-   user='root',
-   password='root',
-   driver="com.mysql.jdbc.Driver",
-   dbtable='student'
-).load()
 
-print("mysql config 2")
+
+
 
 
 print("mysql config  3 start ")
