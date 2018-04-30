@@ -30,4 +30,4 @@ print(df_json)
 insert_dataframe_into_db(df_json,table_name,db_url,db_driver)
 
 
-print("done")
+print("done processing")
