@@ -1,12 +1,14 @@
+from pyspark import SQLContext
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
+
 
 print("hello 2")
 
 
 #https://github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar
 spark = SparkSession.builder.appName("Python Spark SQL basic example").\
-    config('spark.driver.extraClassPath','http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar')\
+    config('spark.driver.extraClassPath','http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar').\
     config("spark.jars", 'http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar').config("spark.master","local[*]").getOrCreate()
 
 
@@ -25,15 +27,15 @@ def insert_dataframe_into_db(df,table_name,db_url,db_driver):
 
 
 print("mysql config2 start ")
-sql = SQLContext(sc)
+sql = SQLContext(spark)
 df = sql.read.format('jdbc').options(
    url='jdbc:mysql://100.66.1.15:5901/student',
    user='root',
    password='root',
    driver="com.mysql.jdbc.Driver",
    dbtable='student'
-).load() 
- 
+).load()
+
 print("mysql config 2")
 
 
@@ -45,8 +47,8 @@ df = sql.read.format('jdbc').options(
    password='root',
    driver="org.mariadb.jdbc.Driver",
    dbtable='student'
-).load() 
- 
+).load()
+
 print("mysql config 3")
 #df_json = spark.read.json("file://student.json", multiLine=True)
 # Create a data frame manually
