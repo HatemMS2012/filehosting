@@ -3,12 +3,11 @@ from pyspark.sql import SparkSession
 from pyspark.sql import Row
 
 
-print("hello 4")
+print("hello 5")
 
 
 #https://github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar
-spark = SparkSession.builder.appName("Python Spark SQL basic example").\
-    config("spark.jars", 'http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar').config("spark.master","local[*]").getOrCreate()
+spark = SparkSession.builder.appName("Python Spark SQL basic example").getOrCreate()
 
 
 db_url = "jdbc:mysql://100.66.1.15:5901/student?user=root&password=root"
