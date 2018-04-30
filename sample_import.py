@@ -19,7 +19,7 @@ def insert_dataframe_into_db(df,table_name,db_url,db_driver):
                   properties={"driver": db_driver})
 
 
-df_json = spark.read.json("file:///home/hmoussel/ipass_data/student.json", multiLine=True)
+df_json = spark.read.json("file://student.json", multiLine=True)
 
 df_json.printSchema()
 
