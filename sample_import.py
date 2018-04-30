@@ -19,14 +19,20 @@ def insert_dataframe_into_db(df,table_name,db_url,db_driver):
                   properties={"driver": db_driver})
 
 
-df_json = spark.read.json("file://student.json", multiLine=True)
+#df_json = spark.read.json("file://student.json", multiLine=True)
+
+
+data =  Row(_id= '1', company='apple', frist_name='jack' , last_name= 'BLUE')
+
+
+df_json = spark.createDataFrame([data])
 
 df_json.printSchema()
-
 
 print("inserting the table")
 
 print(df_json)
+
 insert_dataframe_into_db(df_json,table_name,db_url,db_driver)
 
 
