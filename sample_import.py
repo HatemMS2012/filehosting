@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 
+print("hello")
 
 
 #https://github.com/HatemMS2012/filehosting/blob/master/mysql-connector-java-5.1.38.jar
