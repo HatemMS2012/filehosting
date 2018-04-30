@@ -20,7 +20,7 @@ def insert_dataframe_into_db(df,table_name,db_url,db_driver):
 
 
 #df_json = spark.read.json("file://student.json", multiLine=True)
-
+# Create a data frame manually
 
 data =  Row(_id= '1', company='apple', frist_name='jack' , last_name= 'BLUE')
 
