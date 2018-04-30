@@ -57,4 +57,4 @@ print(df_json)
 insert_dataframe_into_db(df_json,table_name,db_url,db_driver)
 
 
-print("done processing done done fads fdf sdfdskninoin")
+print("done processing done done fads fdf ")
